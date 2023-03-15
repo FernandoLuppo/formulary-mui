@@ -6,7 +6,9 @@ import IconButton from "@mui/material/IconButton"
 import InputLabel from "@mui/material/InputLabel"
 import FormControl from "@mui/material/FormControl"
 import OutlinedInput from "@mui/material/OutlinedInput"
+
 import type { IListingToolbarProps } from "../../types"
+import { Environment } from "../../environment"
 
 export const ListingToolbar: React.FC<Partial<IListingToolbarProps>> = ({
     searchText = "",
@@ -40,7 +42,7 @@ export const ListingToolbar: React.FC<Partial<IListingToolbarProps>> = ({
                                 </IconButton>
                             </InputAdornment>
                         }
-                        label="Search..."
+                        label={Environment.SEARCH_INPUT}
                         value={searchText}
                         onChange={e => whenChangingSearchText?.(e.target.value)}
                     />
